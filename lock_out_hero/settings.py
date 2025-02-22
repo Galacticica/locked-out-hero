@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "login",
     "building_access",
+    "access_log",
 ]
 
 MIDDLEWARE = [

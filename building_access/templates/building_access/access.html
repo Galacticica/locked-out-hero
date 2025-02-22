@@ -9,4 +9,12 @@
 
 <body>
     <h1>Locked Out?</h1>
-    <button type="submit">Call the Hero!</button>
+    <form method="post">
+        {% csrf_token %}
+        {{ building_select.as_p }}
+        <button type="submit">Call the Hero!</button>
+    </form>
+
+</body>
+
+</html>
