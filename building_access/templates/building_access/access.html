@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{{url_for('static', filename='access.css')}}" <title>Request Access</title>
+    <link rel="stylesheet" href="{% static 'access.css' %}">
+    <title>Request Access</title>
 </head>
 
 <body>

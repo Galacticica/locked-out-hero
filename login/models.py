@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from building_access.models import Buildings
+from building_access.models import Building
 
 
 class User(AbstractUser):
@@ -10,6 +10,6 @@ class User(AbstractUser):
     gender = models.CharField(max_length=1, null=True, blank=True)
     dorm = models.CharField(max_length=15, null=True, blank=True)
     accessible_buildings = models.ManyToManyField(
-        Buildings, related_name="Accessible_Buildings"
+        Building, related_name="Accessible_Buildings"
     )
     times_used = models.IntegerField(default=0)
