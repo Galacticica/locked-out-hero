@@ -24,4 +24,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("request_access/", include("building_access.urls")),
     path("", views.access_page, name="home"),
+    path("test_login/", include("login.urls")),
 ]

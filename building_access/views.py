@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from .forms import LetMeInForm
+from django.contrib import messages
 from access_log.add_log import add_log
 
 
@@ -26,7 +27,8 @@ def access_page(request):
             user.times_used += 1
             user.save()
             add_log(building, user)
-            print(f"{building} accessed")
+            messages.success(request, f"Successfully accessed {building.name}")
+            return redirect("access_page")
     else:
         form = LetMeInForm(queryset=accessible_buildings)
     template = loader.get_template("building_access/access.html")

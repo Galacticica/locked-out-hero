@@ -5,15 +5,53 @@
 <head>
     <link rel="stylesheet" href="{% static 'access.css' %}">
     <title>Request Access</title>
+    <style>
+        .full-screen-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00c202;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: helvetica, fantasy;
+            font-size: 90px;
+            z-index: 1000;
+        }
+
+        .full-screen-message li {
+            list-style-type: none;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Locked Out?</h1>
+
+    {% if messages %}
+    <ul class="messages full-screen-message">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{message}}</li>
+            {% endfor %}
+    </ul>
+    <script>
+        setTimeout(function () {
+            window.location.href = "{% url 'access_page' %}";
+        }, 5000);  
+    </script>
+    {% endif %}
+
     <form method="post">
         {% csrf_token %}
         {{ building_select.as_p }}
         <button type="submit">Call the Hero!</button>
     </form>
+
+
+
 
 </body>
 
