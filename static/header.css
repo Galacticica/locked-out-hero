@@ -1,0 +1,32 @@
+.header-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #70b8ff;
+}
+
+h1 {
+    font-family: "New Century Schoolbook", "TeX Gyre Schola", serif;
+
+}
+
+.left-image,
+.right-image {
+    height: 50px;
+    padding: 0 10px;
+    /* Add padding to bring images closer to the text */
+}
+
+.center-image {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.header-title {
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+    padding: 0 20px;
+}

@@ -1,11 +1,48 @@
+head {
+    background-color: #f1eee3;
+}
+
+body {
+    text-align: center;
+    font: "New Century Schoolbook", "TeX Gyre Schola", serif;
+    font-weight: bold;
+    color: black;
+}
+
+label {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+select {
+    font-family: "New Century Schoolbook", "TeX Gyre Schola", serif;
+    width: 10%;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: black;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+
+select:focus {
+    border-color: none;
+    outline: none;
+}
+
 button {
     background-color: #ae0f18;
     color: white;
     border: black;
-    padding: 10px 20px;
-    font: helvetica, fantasy;
-    font-size: 16px;
+    padding: 40px 40px;
+    font: "New Century Schoolbook", " TeX Gyre Schola", serif;
+    font-size: 50px;
     text-align: center;
+    border-radius: 50%;
 }
 
 button:hover {

@@ -1,4 +1,4 @@
-{% load i18n %}
+{% extends 'header.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -6,22 +6,26 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
     <title>
         Log In to Call the Hero
     </title>
     <link rel="stylesheet" href="{% static 'login_style.css' %}">
-    Use your CUNE credentials
+    {% endblock %}
 </head>
 
 <body>
+    {% block content %}
     <div class="container">
         <h2>Log In</h2>
+        <h3>Use your CUNE credentials</h3>
         <form method="post" action="{% url 'account_login' %}">
             {% csrf_token %}
             {{ login_form.as_p }}
             <button type="submit">Login</button>
         </form>
     </div>
+    {% endblock %}
 </body>
 
 </html>
