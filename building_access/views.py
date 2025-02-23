@@ -29,7 +29,6 @@ def access_page(request):
             user.times_used += 1
             user.save()
             add_log(building, user)
-            # messages.success(request, f"Successfully accessed {building.name}")
             return redirect("access_granted")
     else:
         form = LetMeInForm(queryset=accessible_buildings)

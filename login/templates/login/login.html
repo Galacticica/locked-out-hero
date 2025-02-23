@@ -2,23 +2,20 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="{% static 'login.css' %}">
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {% block head_title %}
         Log In to Call the Hero
-        {% endblock head_title %}
     </title>
-    {% block extra_head %}
+    <link rel="stylesheet" href="{% static 'login_style.css' %}">
     Use your CUNE credentials
-    {% endblock extra_head %}
 </head>
 
 <body>
-    <div>
+    <div class="container">
+        <h2>Log In</h2>
         <form method="post" action="{% url 'account_login' %}">
             {% csrf_token %}
             {{ login_form.as_p }}
