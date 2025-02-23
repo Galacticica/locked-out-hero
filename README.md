@@ -10,7 +10,7 @@ In the development stage, our program runs off of a uv environment.
 In the terminal, run the command ```uv run py manage.py runserver```
 Then control click the url ```http://127.0.0.1:8000```
 
-    Jimmy John is a male student living in the Ruth dorm. This means that if you log in during the hours of  10 AM - 12 AM Central time he can access all the dorms, but if he logs during the hours between 12 AM - 10 AM  Central time, only Ruth (his home dorm) will be available. 
+Jimmy John is a male student living in the Ruth dorm. This means that if you log in during the hours of  10 AM - 12 AM Central time he can access all the dorms, but if he logs during the hours between 12 AM - 10 AM  Central time, only Ruth (his home dorm) will be available. 
 
 ### Demo Login Info
     Username:jimmy.john  
