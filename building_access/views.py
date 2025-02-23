@@ -7,6 +7,8 @@ from datetime import datetime
 from .forms import LetMeInForm
 from django.contrib import messages
 from access_log.add_log import add_log
+from django.contrib.auth import logout
+from django.urls import reverse
 
 
 @login_required
@@ -27,10 +29,23 @@ def access_page(request):
             user.times_used += 1
             user.save()
             add_log(building, user)
-            messages.success(request, f"Successfully accessed {building.name}")
-            return redirect("access_page")
+            # messages.success(request, f"Successfully accessed {building.name}")
+            return redirect("access_granted")
     else:
         form = LetMeInForm(queryset=accessible_buildings)
     template = loader.get_template("building_access/access.html")
     context = {"building_select": form}
     return HttpResponse(template.render(context, request))
+
+
+def access_granted(request):
+    """Create a view for the access granted page."""
+    template = loader.get_template("building_access/access_granted.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+
+def timed_logout(request):
+    """Log the user out and redirect to the login page."""
+    logout(request)
+    return redirect("/")

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Granted</title>
+    <link rel="stylesheet" href="{% static 'granted.css' %}">
+    <script>
+        setTimeout(function () {
+            window.location.href = "{% url 'timed_logout' %}";
+        }, 5000);
+    </script>
+</head>
+
+<body>
+    <p>Lock Out Hero<br>Has Rescued You</p>
+    <img src="{% static 'randy.png' %}" alt="Hero" class="centered-image">
+</body>
+
+</html>

@@ -18,11 +18,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from building_access import views
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("request_access/", include("building_access.urls")),
     path("", views.access_page, name="home"),
-    path("test_login/", include("login.urls")),
+    path("login/", include("login.urls")),
+    path("accounts/login/", RedirectView.as_view(url="/login/"), name="login_redirect"),
 ]
