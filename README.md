@@ -19,13 +19,10 @@ Jimmy John is a male student living in the Ruth dorm. This means that if you log
     Password: freakyfastfood  
         This is the same password that is used for all school login accounts by default, or it can be set separately
 
-
-## Video
-https://www.youtube.com/watch?v=z5iXxKPf80U&feature=youtu.be
-
-
 Once logged in, select the building you want to gain access to.  
 Once clicking the call for help button, it will show a screen, and at that point the door would unlock.  
 It also logs the usage in our database.  
     
+## Video
+https://www.youtube.com/watch?v=z5iXxKPf80U&feature=youtu.be
 
